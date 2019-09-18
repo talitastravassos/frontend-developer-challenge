@@ -1,0 +1,22 @@
+.headerContainer {
+    background-color: #707070;
+    max-height: 300vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* font-size: calc(10px + 2vmin); */
+    color: white;
+    padding: 80px;
+  }
+
+  .button{
+      background-color: white;
+      margin-left: 10px;
+  }
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+  }

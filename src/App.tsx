@@ -1,13 +1,10 @@
 import React from 'react';
 import './App.css';
+import Home from './containers/Home';
 
-const App: React.FC = () => {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Landing Page</h1>
-      </header>
-    </div>
+    <Home/>
   );
 }
 
