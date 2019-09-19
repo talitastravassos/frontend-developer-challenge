@@ -1,0 +1,26 @@
+import React, { useEffect } from 'react'
+import style from "./productcard.module.css"
+
+interface Props {
+    product: any
+}
+const ProductCard = ({product}: Props) => {
+
+    // useEffect(() => {
+    //     console.log(product)
+    // }, [product])
+
+    return (
+        <div className={style.card}>
+            <div className={style.divImage}><img src={product.image} alt="product image"/></div>
+            <h4 className="mt-3">{ product.name }</h4>
+            <p> { product.description } </p>
+            <h5>De: R$ { product.oldPrice }</h5>
+            <h4>Por: R$ { product.price }</h4>
+            <h5>ou { product.installments.count + "x" } de R$ { product.installments.value }</h5>
+            <button className="btn btn-outline-secondary btn-block">Comprar</button>
+        </div>
+    )
+}
+
+export default ProductCard

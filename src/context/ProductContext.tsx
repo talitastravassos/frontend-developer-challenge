@@ -1,18 +1,21 @@
 import React from 'react'
-
+import axios from "axios";
 interface State {
     products: any[],
+    baseURL: string,
     nextPage: string
 }
 
 interface IContext {
     state: State;
     action: {
-      test(): void;
+      getProducts(url: string): void;
     };
   }
 
 export const ProductContext = React.createContext({} as IContext);
+
+// export const base_url = "https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1"
 
 export default class ProductProvider extends  React.PureComponent<{}, State> {
     constructor(props: any) {
@@ -20,19 +23,35 @@ export default class ProductProvider extends  React.PureComponent<{}, State> {
     
         this.state = {
             products: [],
+            baseURL: "https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1",
             nextPage: ""
         }
     }
 
-    test = () => {
-        console.log("context ok")
+    getProducts = (url: string) => {
+        axios.get(url)
+            .then( res =>{
+                // console.log(res)
+                this.setState({
+                    products: res.data.products,
+                    nextPage: res.data.nextPage
+                })
+            })
+    }
+
+    componentDidMount(){
+        this.getProducts(this.state.baseURL)
+    }
+    
+    componentDidUpdate(){
+        console.log(this.state)
     }
 
     render() {
         const value = {
             state: { ...this.state },
             action: {
-                test: this.test
+                getProducts: this.getProducts
             }
         }
 
