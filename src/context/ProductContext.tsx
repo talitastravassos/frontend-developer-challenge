@@ -3,7 +3,8 @@ import axios from "axios";
 interface State {
     products: any[],
     baseURL: string,
-    nextPage: string
+    nextPage: string,
+    loading: boolean
 }
 
 interface IContext {
@@ -21,17 +22,20 @@ export default class ProductProvider extends React.PureComponent<{}, State> {
         this.state = {
             products: [],
             baseURL: "https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1",
-            nextPage: ""
+            nextPage: "",
+            loading: false
         }
     }
 
     getProducts = (url: string) => {
+        this.setState({loading: true})
 
         axios.get(url)
             .then(res => {
                 this.setState({
                     products: this.state.products.concat(res.data.products),
-                    nextPage: "https://" + res.data.nextPage
+                    nextPage: "https://" + res.data.nextPage,
+                    loading: false
                 })
             })
 

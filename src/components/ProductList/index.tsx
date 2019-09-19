@@ -1,21 +1,20 @@
 import React, { useEffect, useContext } from 'react'
+import Loader from 'react-loader-spinner'
 import ProductCard from '../ProductCard'
 import style from "./productlist.module.css";
 import { ProductContext } from '../../context/ProductContext';
 
 const ProductList = () => {
 
-    const { 
-        state: { products, nextPage },
-        action: { getProducts }} = useContext(ProductContext)
+    const {
+        state: { products, nextPage, loading },
+        action: { getProducts } } = useContext(ProductContext)
 
     useEffect(() => {
-        // getProducts()
         console.log(products)
     }, [products])
-    
+
     const handleNextPage = () => {
-        // console.log(nextPage)
         getProducts(nextPage)
     }
 
@@ -23,13 +22,22 @@ const ProductList = () => {
         <div className={style.container}>
             <h2 className="mb-5">Sua seleção especial</h2>
             <div className={style.productsContainer}>
-                {
-                    products.map( product => {
-                        return <ProductCard product={product} key={product.id}/>
-                    })
+                {products.map(product => {
+                    return <ProductCard product={product} key={product.id} />
+                })
                 }
             </div>
-            <button className="btn btn-outline-secondary" onClick={() => handleNextPage()}> Ainda mais produtos aqui! </button>
+            {(loading) ? (
+                <Loader
+                    type="Grid"
+                    color="#888888"
+                    height={50}
+                    width={50}
+                />) : (
+                    <button
+                        className="btn btn-outline-secondary"
+                        onClick={() => handleNextPage()}> Ainda mais produtos aqui! </button>
+                )}
         </div>
     )
 }
