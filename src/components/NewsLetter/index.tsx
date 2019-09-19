@@ -47,7 +47,7 @@ const NewsLetter = () => {
             <h2 className="mb-5">Compartilhe a novidade</h2>
             <p className="mt-2 mb-5">Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</p>
 
-            <div className={style.form}>
+            <form className={style.form}>
                 <div className="form-group mr-4">
                     <label className="mb-0">Nome do seu amigo:</label>
                     <input 
@@ -69,7 +69,7 @@ const NewsLetter = () => {
                         value={state.email}
                         onChange={onChange} />
                 </div>
-            </div>
+            </form>
             <button type="submit" className="btn btn-outline-secondary mt-5" onClick={submit}>Enviar agora</button>
         </div>
     )
