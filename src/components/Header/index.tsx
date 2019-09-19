@@ -10,7 +10,7 @@ const Header = () => {
       Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!
       </p>
       <div className={style.buttons}>
-        <button className="btn btn-light mr-5">Conheça a Linx</button>
+        <a href="https://www.linx.com.br/" target="_blank" rel="noopener noreferrer" className="btn btn-light mr-5">Conheça a Linx</a>
         <button className="btn btn-light mr-5">Ajude o algoritmo</button>
         <button className="btn btn-light mr-5">Seus Produtos</button>
         <button className="btn btn-light">Compartilhe</button>

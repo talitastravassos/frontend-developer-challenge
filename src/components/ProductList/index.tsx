@@ -21,7 +21,7 @@ const ProductList = () => {
 
     return (
         <div className={style.container}>
-            <h2>Sua seleção especial</h2>
+            <h2 className="mb-5">Sua seleção especial</h2>
             <div className={style.productsContainer}>
                 {
                     products.map( product => {
