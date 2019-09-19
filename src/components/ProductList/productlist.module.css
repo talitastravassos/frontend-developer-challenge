@@ -12,3 +12,12 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+
+@media only screen and (max-width: 900px) {
+    
+    .productsContainer{
+        grid-template-columns: 50% 50%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}

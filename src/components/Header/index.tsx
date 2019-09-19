@@ -5,15 +5,15 @@ const Header = () => {
   return (
     <div className={style.headerContainer}>
       <h3 className="mb-0">uma seleção de produtos</h3>
-      <h1 className="display-3 mt-auto">especial para você</h1>
+      <h1 className="mt-auto">especial para você</h1>
       <p className="m-2">
       Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!
       </p>
       <div className={style.buttons}>
-        <a href="https://www.linx.com.br/" target="_blank" rel="noopener noreferrer" className="btn btn-light mr-5">Conheça a Linx</a>
+        <button className="btn btn-light mr-5">Conheça a Linx</button>
         <button className="btn btn-light mr-5">Ajude o algoritmo</button>
         <button className="btn btn-light mr-5">Seus Produtos</button>
-        <button className="btn btn-light">Compartilhe</button>
+        <button className="btn btn-light mr-5">Compartilhe</button>
       </div>
     </div>
   );
