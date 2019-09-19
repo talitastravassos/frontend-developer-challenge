@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import style from "./productcard.module.css"
 
 interface Props {
@@ -6,13 +6,9 @@ interface Props {
 }
 const ProductCard = ({product}: Props) => {
 
-    // useEffect(() => {
-    //     console.log(product)
-    // }, [product])
-
     return (
         <div className={style.card}>
-            <div className={style.divImage}><img src={product.image} alt="product image"/></div>
+            <div className={style.divImage}><img src={product.image} alt="product"/></div>
             <h4 className="mt-3">{ product.name }</h4>
             <p> { product.description } </p>
             <h5>De: R$ { product.oldPrice }</h5>
