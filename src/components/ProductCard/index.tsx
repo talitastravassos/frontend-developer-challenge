@@ -1,8 +1,9 @@
 import React from 'react'
 import style from "./productcard.module.css"
+import { Product } from '../../context/product.types'
 
 interface Props {
-    product: any
+    product: Product
 }
 const ProductCard = ({product}: Props) => {
 

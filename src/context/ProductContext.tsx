@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from "axios";
+import { Product } from './product.types';
 interface State {
-    products: any[],
+    products: Product[],
     baseURL: string,
     nextPage: string,
     loading: boolean
