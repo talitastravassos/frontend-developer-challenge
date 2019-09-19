@@ -1,4 +1,4 @@
-## Quick start
+## Landing Page Project - Frontend Challenge
 
 ### Stack
 - React (React Hooks, Context API)
@@ -8,6 +8,7 @@
 - Axios
 - Netlify
 
+## Quick start
 In the project directory:
 
 ### Install dependencies
